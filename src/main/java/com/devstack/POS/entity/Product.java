@@ -3,7 +3,6 @@ package com.devstack.POS.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,21 +12,20 @@ import java.util.UUID;
 @Setter
 @ToString
 @Entity
-@Table(name = "customer_order")
-public class CustomerOrder {
+@Table(name = "customer")
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "order_id")
-    private UUID orderId;
+    @Column(name = "product_id")
+    private UUID id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
+    private String description;
 
-    @Column(name = "total_cost")
-    private Double totalCost;
+    @Column(name = "unit_price")
+    private Double unitPrice;
 
-    private LocalDate date;
+    @Column(name ="qty_on_hand")
+    private Integer qtyOnHand;
 
     @OneToMany(mappedBy = "customerOrder", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<OrderDetails> detailsList;

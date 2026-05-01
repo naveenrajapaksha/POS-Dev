@@ -1,0 +1,34 @@
+package com.devstack.POS.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.UUID;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@Entity
+@Table(name = "order_details")
+public class OrderDetails {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "order_details_id")
+    private UUID id;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private CustomerOrder customerOrder;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    @Column(name = "unit_price")
+    private Double unitPrice;
+
+    @Column(name = "qty")
+    private Integer qty;
+}
