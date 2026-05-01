@@ -15,20 +15,21 @@ import java.util.UUID;
 public class OrderDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "order_details_id")
+    @Column(name="order_details_id")
     private UUID id;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="order_id")
     private CustomerOrder customerOrder;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="product_id")
     private Product product;
 
-    @Column(name = "unit_price")
+    @Column(name="unit_price")
     private Double unitPrice;
 
-    @Column(name = "qty")
+    @Column(name="qty")
     private Integer qty;
+
 }
