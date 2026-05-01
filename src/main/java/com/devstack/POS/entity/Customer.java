@@ -3,6 +3,7 @@ package com.devstack.POS.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -24,6 +25,9 @@ public class Customer {
     private String address;
 
     private double salary;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<CustomerOrder> orders;
 
 }
 
