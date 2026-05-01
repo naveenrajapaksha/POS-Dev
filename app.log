@@ -602,3 +602,8 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'test_pos.order_details' does
 2026-05-01T12:08:46.387+05:30  INFO 15840 --- [POS] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/api/v1'
 2026-05-01T12:08:46.392+05:30  INFO 15840 --- [POS] [restartedMain] com.devstack.POS.PosApplication          : Started PosApplication in 1.621 seconds (process running for 35.542)
 2026-05-01T12:08:46.393+05:30  INFO 15840 --- [POS] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-01T12:41:13.392+05:30  INFO 15840 --- [POS] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-01T12:41:13.408+05:30  INFO 15840 --- [POS] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-01T12:41:13.412+05:30  INFO 15840 --- [POS] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T12:41:13.414+05:30  INFO 15840 --- [POS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-05-01T12:41:13.426+05:30  INFO 15840 --- [POS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
