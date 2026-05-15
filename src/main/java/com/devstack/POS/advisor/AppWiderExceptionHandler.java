@@ -1,6 +1,6 @@
 package com.devstack.POS.advisor;
 
-import com.devstack.POS.exception.DuplicateEntryException;
+
 import com.devstack.POS.exception.EntryNotFoundException;
 import com.devstack.POS.exception.ValidationException;
 import com.devstack.POS.util.StandardResponseDTO;

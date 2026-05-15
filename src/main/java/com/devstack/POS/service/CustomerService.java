@@ -11,11 +11,7 @@ public interface CustomerService {
     void createCustomer(CustomerRequestDTO dto);
     void updateCustomer(CustomerRequestDTO dto, UUID id);
     void deleteCustomer(UUID id);
-    CustomerResponseDTO findCustomer(UUID id);
-    List<CustomerResponseDTO> findAll(); // not a best practice
-    PagedResponseDTO<CustomerResponseDTO> searchCustomer(String searchText, int page, int pageSize);
-
     CustomerResponseDTO findCustomerById(UUID id);
-
+    List<CustomerResponseDTO> findAll(); // not a best practice
     PagedResponseDTO<CustomerResponseDTO> searchCustomers(String searchText, int page, int size);
 }
