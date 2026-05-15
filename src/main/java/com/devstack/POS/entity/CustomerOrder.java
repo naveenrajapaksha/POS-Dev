@@ -13,6 +13,7 @@ import java.util.UUID;
 @Setter
 @ToString
 @Entity
+@Builder
 @Table(name = "customer_order")
 public class CustomerOrder {
     @Id
@@ -24,11 +25,12 @@ public class CustomerOrder {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @Column(name = "total_cost")
-    private Double totalCost;
+    @Column(name="total_cost")
+    private double totalCost;
 
     private LocalDate date;
 
-    @OneToMany(mappedBy = "customerOrder", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "customerOrder", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     private List<OrderDetails> detailsList;
+
 }

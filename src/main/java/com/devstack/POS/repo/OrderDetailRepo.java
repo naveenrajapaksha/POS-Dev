@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import java.util.UUID;
 
 @EnableJpaRepositories
-public interface OrderDetailRepo extends JpaRepository<OrderDetails, UUID> {
+public interface OrderDetailsRepo extends JpaRepository<OrderDetails, UUID> {
 }

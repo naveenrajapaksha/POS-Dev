@@ -12,7 +12,7 @@ import java.util.UUID;
 @ToString
 public class OrderDetailsRequestDTO {
     @NotNull(message = "Product id is required.")
-    private UUID orderId;
+    private UUID productId;
 
     @Min(value = 1, message = "Quantity must be at least 1")
     @Max(value = 10000, message = "Quantity must not exceed 10,000")
